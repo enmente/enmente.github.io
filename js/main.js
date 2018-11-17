@@ -309,6 +309,7 @@ $(document).on('click', '.readMore', function(event) {
 
 $(document).on('click', '.inscribirme', function(event) {
     event.preventDefault();
+    console.log('dff');
     var index = event.target.id.replace(/^\D+/g, '');
     var curso = cursos[index-1];
     $('#modali').addClass('showModal');
