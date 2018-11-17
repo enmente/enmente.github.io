@@ -1,0 +1,804 @@
+body {
+    height: 100%;
+    position: absolute;
+    overflow-x: hidden;
+    width: 100%;
+    background-color: #EDF2EA;
+    margin: 0;
+    font-family: 'Libre Franklin', sans-serif !important;
+    font-size: 24px;
+}
+
+.first {
+    transition: all 1s !important;
+}
+
+.second {
+    transition: all 1.4s !important;
+}
+
+.third {
+    transition: all 1.8s !important;
+}
+
+.fourth {
+    transition: all 2.2s !important;
+}
+
+.fifth {
+    transition: all 2.6s !important;
+}
+
+.six {
+    transition: all 3s !important;
+}
+
+.special {
+    background-color: #EDF2EA !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colm {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+
+}
+
+.avatar {
+    border-radius: 50%;
+    max-width: 25vw;
+    overflow: hidden;
+    background-color: #EC1748 !important;
+}
+
+.colm h1 {
+    padding: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.avatar p {
+    position: absolute;
+    opacity: 0;
+    font-size: 2em;
+    top: calc(50% - 2em);
+    text-align: center;
+    width: 100%;
+}
+
+#cursosContainer {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.maskImage {
+    display: flex;
+    position: relative;
+    height: 350px;
+    width: 100%
+}
+
+.imageCurso {
+    height: 100%;
+    width: auto;
+}
+
+.totalWrap {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.actual {
+    left: 0 !important;
+}
+
+.left {
+    .left: -100% !important;
+}
+
+.right {
+    left: 100% !important;
+}
+
+.curso {
+    position: relative;
+    transition: all 1s;
+    width: 100%;
+    display: block;
+}
+
+.cursoDescripcion {
+    font-size: inherit;
+    height: 1.5em;
+    overflow: hidden;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.readMore {
+    color: #3FC3DF !important;
+    font-size: inherit;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.imageImage {
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index: 99;
+}
+.modali {
+    padding: 20px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 1s;
+}
+#modali {
+    padding: 20px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 1s;
+}
+
+.showModal {
+    z-index: 99999999999999999999999999999999999999999999999999999999999 !important;
+    opacity: 1 !important;
+}
+
+#modalRegister {
+    background-color: white;
+    width: 100%;
+    overflow-y: auto;
+    height: 100%;
+}
+.fila{
+    align-items: center;
+    display: flex;
+    justify-content: left;
+    margin: 0.5em;
+}
+.row{
+  justify-content: center !important;
+}
+.tematica{
+display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 0.9em;
+    width: 16em;
+    margin-right: 1em;
+    align-items: center;
+    padding-bottom: 10px;
+    max-width: 16em;
+    outline: none !important;
+    margin-bottom: .5em;
+    padding-left: 15px;
+    z-index: 9999;
+    padding-right: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 21px;
+    background-color: #3FC3DF !important;
+    color: white;
+    font-weight: bold;
+    transition: all 1s ease;
+}
+#imageWrapper {
+    background-image: url(../img/fondo_formulario.png);
+    background-size: contain;
+    background-position: right center;
+    width: 100%;
+}
+.registerTile{
+  font-weight: bold;
+  justify-content: left !important;
+  color: #5C5D60;
+}
+.mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.infoWrapper {
+    display: inline-flex;
+    font-size: 1.8em;
+    flex-direction: column;
+}
+
+.info {
+    padding-top: 2em;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-bottom: 2em;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+}
+
+.nombreCurso {
+    font-weight: 600;
+    padding-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-bottom: 20px;
+}
+
+.cursoImage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labeli {
+    font-weight: 800;
+    font-size: inherit;
+    padding-right: 10px;
+    padding-left: 0 !important;
+}
+
+.answer {
+    font-size: inherit;  
+    outline: none;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.primaryButtonWrapper {}
+
+.listTile {
+    display: flex;
+    padding-bottom: 10px;
+}
+.tematicaClicked{
+  background-color: white !important;
+  color: #EC1748 !important;
+}
+.stepContainer {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stepTitle {
+    font-weight: 600;
+}
+
+.hex {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url('../img/cuadrado_rojo_textura.png')
+}
+
+.stepNumber {
+    height: 2em;
+    width: 2em;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EC1748 !important;
+    color: white;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.icon:hover {
+    opacity: 0.3;
+}
+
+.fullRow {
+    width: 100%;
+
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuIcon {
+    padding-top: 10px;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+#somos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.title {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    transform: translateY(50px);
+    margin: 2vh;
+    color: #EB174B;
+    letter-spacing: 0.5vw;
+    font-size: 3.5em;
+    text-align: center;
+}
+
+.bodyDummy {
+    height: 500% !important;
+    width: 100%;
+}
+
+.backgroundfullHeight {
+    height: 30vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #F1F7ED !important;
+    background-position: center center;
+}
+
+#icon1section {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-image: url('../img/header4.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.iconsection {
+    display: flex;
+    flex-direction: column;
+}
+
+#icon1 {
+    transform: translateX(80%) translateY(-20%);
+}
+
+#icon3 {
+    transform: translateX(-80%) translateY(-20%);
+}
+
+.icon {
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+    width: 100%;
+    max-width: 250px;
+}
+
+#headerContainer {
+    height: 100%;
+    width: 100%;
+
+    background-size: cover;
+    background-image: url('../img/header6.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.flecha {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    position: relative;
+    justify-self: center;
+    cursor: pointer;
+    align-self: center;
+}
+
+#before {
+    margin-left: 30px;
+}
+
+#after {
+    margin-right: 30px;
+}
+
+#maskHeader {
+    background-color: #F1F7ED;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.meanuAppear {
+    height: 15em !important;
+}
+
+.maskMenuContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.fullBody {
+    height: 100%;
+    width: 100%;
+}
+
+.fullBodyAbs {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+}
+
+#right {
+    top: 100%;
+    left: 100%;
+}
+
+#left {
+    top: 100%;
+    right: 100%;
+}
+
+.rowIcon {
+    height: 50%;
+    display: flex;
+}
+
+.row {
+    margin: 0 !important;
+}
+
+#maskMenu {
+    background: rgba(0, 0, 0, 0.9);
+    display: flex !important;
+    position: fixed;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: -22;
+}
+
+.displayed {
+    opacity: 1 !important;
+    z-index: 10000 !important;
+    transform: translateY(0) !important;
+}
+
+.iconicon {
+    height: 20vh;
+    max-height: 20vw;
+    display: block;
+    min-height: 25px;
+}
+
+.labelIcon {
+    font-size: 5vh;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+    margin: 10px;
+}
+
+#header {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#cubitosContainer {
+    position: absolute;
+    overflow: hidden;
+
+}
+
+.cubito {
+    position: absolute;
+    z-index: 10;
+    transition: all 1.5s;
+    touch-action: none;
+}
+
+#cubitos1 {
+    height: 12.5vh;
+    left: 20%;
+    top: 10%;
+    right: auto;
+    bottom: auto;
+}
+
+#cubitos2 {
+    height: 22.5vh;
+    left: 7.5%;
+    top: 25%;
+    right: auto;
+    bottom: auto;
+}
+
+#cubitos3 {
+    height: 30vh;
+    left: 10%;
+    bottom: 10%;
+    right: auto;
+    top: auto;
+}
+
+#cubitos4 {
+    height: 12.5vh;
+    right: 20%;
+    top: 10%;
+    left: auto;
+    bottom: auto;
+}
+
+#cubitos5 {
+    height: 22.5vh;
+    right: 7.5%;
+    left: auto;
+    bottom: auto;
+    top: 25%;
+    transform: rotate(30deg);
+}
+
+#cubitos6 {
+    height: 30vh;
+    right: 10%;
+    bottom: 10%;
+    left: auto;
+    top: auto;
+}
+
+.avatar:hover p {
+    opacity: 1;
+}
+
+.cubito:hover {
+    transform: rotate(60deg) !important;
+}
+
+.up {
+    margin-bottom: 1.5vh !important;
+}
+
+.down {
+    margin-top: 1.5vh !important;
+}
+
+.primaryButton {
+    font-size: 1.5em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    z-index: 9999;
+    padding-right: 15px;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px;
+    border-radius: 21px;
+    margin-top: 30px;
+    background-color: #EC1748;
+    color: white;
+    font-weight: bold;
+
+    transition: all 1s ease;
+}
+
+.primaryButton:hover {
+    opacity: 0.75;
+}
+
+@media screen and (max-width: 900px) and (min-height: 600px) {
+    .fullRow {
+        flex-direction: column;
+
+    }
+
+    .icon {
+        max-width: 20vh;
+    }
+
+    .colm {
+        margin: 0 !important;
+
+    }
+
+    #cubitos1 {
+        height: 17.5vw !important;
+        left: 25vw !important;
+        top: 4.5% !important;
+        max-height: 30vh !important;
+    }
+
+    #cubitos2 {
+        height: 15vw !important;
+        left: 5vw !important;
+        max-height: 20vh !important;
+        top: 14.5vw !important;
+    }
+
+
+    #cubitos3 {
+        height: 10vw !important;
+        left: 10vw !important;
+        top: 35vw !important;
+        max-height: 10vh !important;
+    }
+
+    #cubitos4 {
+        height: 10vw !important;
+        right: 10vw !important;
+        top: initial !important;
+        bottom: 35vw !important;
+        max-height: 10vh !important;
+
+    }
+
+    #cubitos5 {
+        height: 15vw !important;
+        max-height: 20vh !important;
+        right: 5vw !important;
+        top: initial !important;
+        bottom: 14.5vw !important;
+    }
+
+    #cubitos6 {
+        height: 17.5vw !important;
+        right: 25vw !important;
+        bottom: 4.5% !important;
+        max-height: 30vh !important;
+    }
+}
+
+@media screen and (max-width: 560px) {
+
+    #cubitos1 {
+        height: 17.5vw !important;
+        left: 25vw !important;
+        top: 4.5% !important;
+        max-height: 30vh !important;
+    }
+
+    #cubitos2 {
+        height: 15vw !important;
+        left: 5vw !important;
+        max-height: 20vh !important;
+        top: 14.5vw !important;
+    }
+
+    #cubitos3 {
+        height: 10vw !important;
+        left: 10vw !important;
+        top: 35vw !important;
+        bottom: initial !important;
+        max-height: 10vh !important;
+    }
+
+    #cubitos4 {
+        height: 10vw !important;
+        right: 10vw !important;
+        top: initial !important;
+        bottom: 35vw !important;
+        max-height: 10vh !important;
+
+    }
+
+    #cubitos5 {
+        height: 15vw !important;
+        max-height: 20vh !important;
+        right: 5vw !important;
+        top: initial !important;
+        bottom: 14.5vw !important;
+    }
+
+    #cubitos6 {
+        height: 17.5vw !important;
+        right: 25vw !important;
+        bottom: 4.5% !important;
+        max-height: 30vh !important;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    #cubitos1 {
+        height: 11.5vh;
+        left: 20%;
+        top: 10%;
+    }
+
+    #cubitos2 {
+        height: 16.5vh;
+        left: 7.5%;
+        top: 32%;
+    }
+
+    #cubitos3 {
+        height: 22vh;
+        left: 10%;
+        bottom: 10%;
+    }
+
+    #cubitos4 {
+        height: 11.5vh;
+        right: 20%;
+        bottom: 10%;
+
+
+    }
+
+    #cubitos5 {
+        height: 16.5vh;
+        right: 7.5%;
+        top: 32%;
+        transform: rotate(30deg);
+    }
+
+    #cubitos6 {
+        height: 22vh;
+        right: 10%;
+        bottom: 10%;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .rowIcon {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .iconicon {
+        height: 20vh;
+        max-height: 10vh;
+        display: block;
+        min-height: 25px;
+    }
+
+    .labelIcon {
+        font-size: 3.5vh;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .fullRow {
+        flex-direction: column;
+
+    }
+
+    .icon {
+        max-width: 20vh;
+    }
+
+    .colm {
+        margin: 0 !important;
+
+    }
+}

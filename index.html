@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+    <script>
+        // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAWPPtXb2CJIolMXXKuRPP1tiDLPN8tcSI",
+    authDomain: "enmente-cb3b7.firebaseapp.com",
+    databaseURL: "https://enmente-cb3b7.firebaseio.com",
+    projectId: "enmente-cb3b7",
+    storageBucket: "enmente-cb3b7.appspot.com",
+    messagingSenderId: "1074211700497"
+  };
+  firebase.initializeApp(config);
+</script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ENMENTE - DISEÑO & INNOVACION</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/css/bootstrap-slider.min.css" integrity="sha256-NGswHEy6gjXxyLL+vBBHigA1kGliPHt+7BBPBzntzAw=" crossorigin="anonymous" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menuPrincipal" style="position: fixed;
+    z-index: 99999;
+    margin: 20px;
+    
+    width: 5em;
+    overflow: hidden;">
+        <img src="../img/boton_principal.png"  style="width: 100%;cursor: pointer;" id="menuFixed">
+        <div id="menuContainer" style="background: white;
+    margin-top: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: all 1s;
+    height: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;">
+            <a href="https://www.facebook.com/www.enmente.pe/" >
+            	<img src="../img/boton_facebook.png" style="width: 100%;" class="menuIcon">
+            </a>
+            <img src="../img/boton_whatsapp.png" style="width: 100%;" class="menuIcon">
+            <img src="../img/boton_contacto.png" style="width: 100%;" class="menuIcon">
+		</div>
+        </div>
+        <div id="congrats" style="display: flex;
+    flex-direction: column;
+    justify-content: center;" class="modali">
+            <div class="modaly" style="background: white;
+    padding: 20px;
+    font-size: 2em;
+    text-align: center;">
+                ¡Gracias por inscribirte! Estamos enviando mayor informacion a tu correo.
+            </div>
+        </div>
+        <div id="modali">
+            <div id="modalRegister">
+                <div id="imageWrapper" style="padding: 1.5em;
+    font-size: 1.5em;">
+                    <h1 style="font-size: 2em;font-weight: bold;color: #5C5D60;">FORMULARIO DE INSCRIPCION</h1>
+                    <h2 style="color: #EC1748;font-weight: bold;padding-bottom: 0.5em;padding-top: 0.5em;" id="nombreTaller">Nombre del taller</h2>
+                    <form id="inscripcionForm" action="index_submit" method="get" accept-charset="utf-8">
+                        <div class="row listTile registerTile">
+                            <div class="col-md-4 labeli">Nombres:</div>
+                            <input id="nombres" class="col-md-4 answer" required></input>
+                        </div>
+                        <div class="row listTile registerTile">
+                            <div class="col-md-4 labeli">Apellidos:</div><input id="apellidos" class="col-md-4 answer" required></input>
+                        </div>
+                        <div class="row listTile registerTile">
+                            <div class="col-md-4 labeli">Region de Residencia:</div><select id="Region" style="background-color: white;border-radius: 10px;padding: 7px;width: max-content;" required>
+                                <option value="Amazonas">Amazonas</option>
+                                <option value="Áncash">Áncash</option>
+                                <option value="Apurimac">Apurimac</option>
+                                <option value="Arequipa">Arequipa</option>
+                                <option value="Ayacucho">Ayacucho</option>
+                                <option value="Cajamarca">Cajamarca</option>
+                                <option value="Callao">Callao</option>
+                                <option value="Cuzco">Cuzco</option>
+                                <option value="Huancavelica">Huancavelica</option>
+                                <option value="Huanuco">Huanuco</option>
+                                <option value="Ica">Ica</option>
+                                <option value="Junin">Junin</option>
+                                <option value="La Libertad">La Libertad</option>
+                                <option value="Lambayeque">Lambayeque</option>
+                                <option value="Lima" selected="selected">Lima</option>
+                                <option value="Loreto">Loreto</option>
+                                <option value="Madre de Dios">Madre de Dios</option>
+                                <option value="Moquegua">Moquegua</option>
+                                <option value="Pasco">Pasco</option>
+                                <option value="Piura">Piura</option>
+                                <option value="Puno">Puno</option>
+                                <option value="San Martin">San Martin</option>
+                                <option value="Tacna">Tacna</option>
+                                <option value="Tumbes">Tumbes</option>
+                                <option value="Ucayali">Ucayali</option>
+                            </select>
+                        </div>
+                        <div class="row listTile registerTile">
+                            <div class="col-md-4 labeli">Correo:</div><input id="correo" type="email" class="col-md-4 answer"></input required>
+                        </div>
+                        <div class="row listTile registerTile">
+                            <div class="col-md-4 labeli">Telefono/Celular:</div><input id="contacto" class="col-md-4 answer" pattern="[0-9]{9}" type="text" required></input>
+                        </div>
+                    </form>
+                    <div class="row listTile registerTile">
+                        <div class="col-md-4 labeli">Temas de interes:</div>
+                    </div>
+                    <div class="tematicas" style="margin-top: 2em;">
+                        <div class="row">
+                            <button onclick="tematicaClick(event);" class="col-md-2 tematica">DISEÑO</button>
+                            <button onclick="tematicaClick(event);" class="col-md-2 tematica">PAPELERIA</button>
+                            <button onclick="tematicaClick(event);" class="col-md-2 tematica">MERCADOTECNIA</button>
+                            <button onclick="tematicaClick(event);" class="col-md-2 tematica">REDES SOCIALES</button>
+                        </div>
+                        <div class="row">
+                            <button onclick="tematicaClick(event);" class="col-md-3 tematica">COMUNICACION</button>
+                            <button onclick="tematicaClick(event);" class="col-md-3 tematica">IMAGEN CORPORATIVA</button>
+                            <button onclick="tematicaClick(event);" class="col-md-3 tematica">CREATIVIDAD</button>
+                        </div>
+                    </div>
+                    <div id="terminar" class="primaryButton">Terminar</div>
+                </div>
+            </div>
+        </div>
+        <div id="primary" class="fullBody special">
+            <div id="headerContainer" class="fullBody">
+                <div id="maskHeader" class="fullBody"></div>
+                <div id="header">
+                    <img src="../img/enmente_logo.png" style="min-width: 220px; width: 30%; max-width: 90vh;"alt="">
+     		</div>
+                    <div id="cubitosContainer" class="fullBody">
+                        <img draggable=false id="cubitos1" src="../img/cubitos/cubo_b.png" class="cubito"></img>
+                        <img draggable=false id="cubitos2" src="../img/cubitos/cubo_c.png" class="cubito"></img>
+                        <img draggable=false id="cubitos3" src="../img/cubitos/cubo_g.png" class="cubito"></img>
+                        <img draggable=false id="cubitos4" src="../img/cubitos/cubo_a.png" class="cubito"></img>
+                        <img draggable=false id="cubitos5" src="../img/cubitos/cubo_e.png" class="cubito"></img>
+                        <img draggable=false id="cubitos6" src="../img/cubitos/cubo_j.png" class="cubito"></img>
+                    </div>
+                </div>
+            </div>
+            <div id="somos" class="hex">
+                <img draggable=false src="../img/fondo_blanco.png" style="transform: rotate(180deg) translateY(-1px); width: 100%">
+                <div style="width: 100%; background-color: white; height: 46em;position: relative; padding-bottom: 20px;">
+                    <h1 id="line1" class="title first">Somos</h1>
+                    <h1 id="line2"  class="title second">profesionales</h1>
+                    <h1 id="line3"  class="title third">que ofrecemos</h1>
+                    <h1 id="line4"  class="title fourth">soluciones</h1>
+                    <h1 id="line5"  class="title fifth">de diseño</h1>
+                    <h1 id="line6"  class="title six">responsable</h1>
+                    <div style="width: 14em; margin: auto;position: relative;top: 20px;font-size: 2em;opacity: 0;transition: all 1s ease-in-out;transform: translateY(50px);" class="primaryButton" id="talleres">Nuestros talleres</div>
+                </div>
+                <img  draggable=false src="../img/fondo_blanco.png" style="width:100%;transform: translateY(-1px);">
+    </div>
+                <div style="background-color: #EDF2EA">
+                    <div class="totalWrap">
+                        <div id="cursosContainer">
+                        </div>
+                    </div>
+                </div>
+                <!-- JQuery -->
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+                <!-- Bootstrap tooltips -->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+                <!-- Bootstrap core JavaScript -->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+                <!-- MDB core JavaScript -->
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js" integrity="sha256-tDcb6zRMjjdonaeNQujdwW5FQdABco7S2Z60J4cbH9s=" crossorigin="anonymous"></script>
+                <script src="js/main.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+                <script>
+                // Initialize Firebase
+                var config = {
+                    apiKey: "AIzaSyAWPPtXb2CJIolMXXKuRPP1tiDLPN8tcSI",
+                    authDomain: "enmente-cb3b7.firebaseapp.com",
+                    databaseURL: "https://enmente-cb3b7.firebaseio.com",
+                    projectId: "enmente-cb3b7",
+                    storageBucket: "enmente-cb3b7.appspot.com",
+                    messagingSenderId: "1074211700497"
+                };
+                firebase.initializeApp(config);
+                </script>
+                <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+                <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+                <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+                <script>
+                window.ga = function() { ga.q.push(arguments) };
+                ga.q = [];
+                ga.l = +new Date;
+                ga('create', 'UA-XXXXX-Y', 'auto');
+                ga('send', 'pageview')
+                </script>
+                <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>
