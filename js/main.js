@@ -3,11 +3,12 @@ $('#cubitos2').addClass('down');
 $('#cubitos3').addClass('up');
 var tematicasInsc = [];
 class Curso {
-    constructor(nombre, objetivos, perfil, tematicas, tiempo, cursoDescription, photoURL, inicio, termino, precio, inscripcion, vacantes, priority) {
+    constructor(nombre, objetivos, perfil, tematicas, tiempo, cursoDescription, photoURL, inicio, termino, precio, inscripcion, vacantes, priority,tipe) {
         this.nombre = nombre;
         this.cursoDescription = cursoDescription;
         this.objetivos = objetivos;
         this.priority = priority;
+        this.tipe = tipe;
         this.photoURL = photoURL;
         this.perfil = perfil;
         this.tematicas = tematicas;
@@ -187,6 +188,7 @@ $(document).ready(function() {
                     curso.precio = childSnapshot.child('precio').val();
                     curso.vacantes = childSnapshot.child('vacantes').val();
                     curso.inscripcion = childSnapshot.child('fechaInsc').val();
+                    curso.tipe = childSnapshot.child('tipe').val();
                     curso.priority = childSnapshot.child('priority').val();
                     var objEspec = [];
                     var tematicas = [];
@@ -222,10 +224,13 @@ $(document).ready(function() {
         '<div class="curso">'+
             '<div class="cursoImage">'+
                 '<div class="infoWrapper imageImage" style="background-image: url('+curso.photoURL+');">'+
-                    '<div style="height: 100%; width: 100%; background: rgba(0,0,0,0.4)"></div>'+
+                    '<div style="height: 100%; width: 100%; background: rgba(0,0,0,0.4);display: flex;justify-content: center;align-items: flex-end;">'+
+                    ' <img draggable=false src="../img/fondo_blanco.png" style="height: 150px;transform: rotate(180deg) translateY(-1px); width: 100%">'+
+                    '</div>'+
                 '</div>'+
                 '<div class="info">'+
-                        '<h2 class="nombreCurso"'+index+'>'+curso.nombre+'</h2>'+
+                        '<h1 class="tipeCurso">'+curso.tipe+'</h1>'+
+                        '<h2  class="nombreCurso">'+curso.nombre+'</h2>'+
                         '<div id="cursoDescripcion'+index+'" class="cursoDescripcion">'+ curso.cursoDescription+'</div>'+
                         '<h2 id="suspendido'+index+'">...</h2>'+
                         '<div id="readMore'+index+'" class="readMore">Leer más</div>'+
