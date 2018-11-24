@@ -3,10 +3,11 @@ $('#cubitos2').addClass('down');
 $('#cubitos3').addClass('up');
 var tematicasInsc = [];
 class Curso {
-    constructor(nombre, objetivos, perfil, tematicas, tiempo, cursoDescription, photoURL, inicio, termino, precio, inscripcion, vacantes) {
+    constructor(nombre, objetivos, perfil, tematicas, tiempo, cursoDescription, photoURL, inicio, termino, precio, inscripcion, vacantes, priority) {
         this.nombre = nombre;
         this.cursoDescription = cursoDescription;
         this.objetivos = objetivos;
+        this.priority = priority;
         this.photoURL = photoURL;
         this.perfil = perfil;
         this.tematicas = tematicas;
@@ -186,7 +187,7 @@ $(document).ready(function() {
                     curso.precio = childSnapshot.child('precio').val();
                     curso.vacantes = childSnapshot.child('vacantes').val();
                     curso.inscripcion = childSnapshot.child('fechaInsc').val();
-
+                    curso.priority = childSnapshot.child('priority').val();
                     var objEspec = [];
                     var tematicas = [];
                     curso.objetivos = new Objetivos();
@@ -213,6 +214,7 @@ $(document).ready(function() {
                     cursos.push(curso);
                 }
             });
+            cursos.sort(function(a, b){return a.priority-b.priority});
             cursos.forEach(function(curso) {
 
                 var index = (cursos.indexOf(curso) + 1);
