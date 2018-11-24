@@ -352,6 +352,17 @@ $('#terminar').click(function(event) {
             tematicasInsc.forEach(element => {
                 unique.child('Tematicas').push().set(element);
             });
+       var template_params = {
+           "reply_to": "noreply@enmente.pe",
+           "inscriptor_name":$('#nombres').val(),
+           "inscriptor_curso": $('#nombreTaller').val(),
+           "inscriptor_correo":  $('#correo').val(),
+           "inscriptor_contacto": $('#contacto').val()
+        }
+
+        var service_id = "default_service";
+        var template_id = "template_FCZQf2QL";
+        emailjs.send(service_id,template_id,template_params);
          $('#modali').removeClass('showModal');
          $('#congrats').addClass('showModal');
     }else{
