@@ -226,7 +226,7 @@ display: flex;
 }
 .tipeCurso{
   font-size: 2em;
-  
+
   padding: 1em;
   text-align: center;
 }
@@ -245,7 +245,7 @@ display: flex;
     padding-left: 2em;
     padding-bottom: 2em;
     background-color: white;
-    color: #a9a9a9;
+    color: #424242;
 }
 
 .nombreCurso {
