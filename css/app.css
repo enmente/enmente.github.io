@@ -227,13 +227,19 @@ display: flex;
 
 .infoWrapper {
     display: inline-flex;
-    font-size: 1.8em;
+    height: 500px;
     flex-direction: column;
 }
 
 .info {
+    font-size: 1.7em;
 
-    color: white;
+    padding-top: 2em;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-bottom: 2em;
+    background-color: white;
+    color: #a9a9a9;
 }
 
 .nombreCurso {

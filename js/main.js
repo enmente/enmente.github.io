@@ -220,7 +220,9 @@ $(document).ready(function() {
         '<div class="curso">'+
             '<div class="cursoImage">'+
                 '<div class="infoWrapper imageImage" style="background-image: url('+curso.photoURL+');">'+
-                    '<div class="info">'+
+                    '<div style="height: 100%; width: 100%; background: rgba(0,0,0,0.4)"></div>'+
+                '</div>'+
+                '<div class="info">'+
                         '<h2 class="nombreCurso"'+index+'>'+curso.nombre+'</h2>'+
                         '<div id="cursoDescripcion'+index+'" class="cursoDescripcion">'+ curso.cursoDescription+'</div>'+
                         '<h2 id="suspendido'+index+'">...</h2>'+
@@ -252,8 +254,7 @@ $(document).ready(function() {
                         '<div class="primaryButtonWrapper">'+
                             '<div id="inscribirme'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px;"class="primaryButton inscribirme">Inscribirme</div>'+
                         '</div>'+
-                    '</div>'
-                '</div>'+
+                    '</div>'+
             '</div>'+
         '</div>';
                 document.getElementById('cursosContainer').insertAdjacentHTML('beforeend', tagHTML);
