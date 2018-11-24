@@ -347,6 +347,7 @@ $('#terminar').click(function(event) {
                     "Correo": $('#correo').val(),
                     "Region": region,
                     "Contacto": $('#contacto').val(),
+                    "Curso": $('#nombreTaller').val(),
             });
             tematicasInsc.forEach(element => {
                 unique.child('Tematicas').push().set(element);
