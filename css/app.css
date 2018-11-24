@@ -242,6 +242,7 @@ display: flex;
 
 .nombreCurso {
     font-weight: 600;
+    font-size: 2em;
     padding-bottom: 20px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
