@@ -232,7 +232,8 @@ display: flex;
 }
 .infoWrapper {
     display: inline-flex;
-    height: 500px;
+    height: 80vh;
+    min-height: 500px !important;
     flex-direction: column;
 }
 
