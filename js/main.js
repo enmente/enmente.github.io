@@ -3,7 +3,7 @@ $('#cubitos2').addClass('down');
 $('#cubitos3').addClass('up');
 var tematicasInsc = [];
 class Curso {
-    constructor(nombre, objetivos, perfil, tematicas, tiempo, cursoDescription, photoURL, inicio, termino, precio, inscripcion, vacantes, priority,tipe) {
+    constructor(nombre, objetivos, perfil, tematicas, tiempo, cursoDescription, photoURL, inicio, termino, precio, inscripcion, vacantes, priority,tipe,pdf) {
         this.nombre = nombre;
         this.cursoDescription = cursoDescription;
         this.objetivos = objetivos;
@@ -190,6 +190,7 @@ $(document).ready(function() {
                     curso.inscripcion = childSnapshot.child('fechaInsc').val();
                     curso.tipe = childSnapshot.child('tipe').val();
                     curso.priority = childSnapshot.child('priority').val();
+                    curso.pdf = childSnapshot.child('pdf').val();
                     var objEspec = [];
                     var tematicas = [];
                     curso.objetivos = new Objetivos();
@@ -259,6 +260,10 @@ $(document).ready(function() {
                             '<div class="labeli">Duración:</div><div id="duracion" class="answer">'+(curso.tiempo.semanas)+' semanas</div>'+
                         '</div>'+
                         '<div class="primaryButtonWrapper">'+
+                            '<div id="pdf'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px; background-color: white; color:#EC1748" class="primaryButton pdf">Descargar PDF</div>'+
+                        '</div>'+
+                        '<div style="height:30px"></div>'+
+                        '<div class="primaryButtonWrapper">'+
                             '<div id="inscribirme'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px;"class="primaryButton inscribirme">Inscribirme</div>'+
                         '</div>'+
                     '</div>'+
@@ -317,14 +322,27 @@ $(document).on('click', '.readMore', function(event) {
 
 $(document).on('click', '.inscribirme', function(event) {
     event.preventDefault();
-    console.log('dff');
+    
     var index = event.target.id.replace(/^\D+/g, '');
     var curso = cursos[index-1];
     $('#modali').addClass('showModal');
     $('#nombreTaller').html(curso.nombre);
 
 });
+$(document).on('click', '.pdf', function(event) {
+    event.preventDefault();
+    var index = event.target.id.replace(/^\D+/g, '');
+    var curso = cursos[index-1];
+   var pdfURL = curso.pdf;
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+    xhr.onload = function(event) {
+    var blob = xhr.response;
+  };
+  xhr.open('GET', pdfURL);
+  xhr.send();
 
+});
 $('#modali').click(function(event) {
     $('#modali').removeClass('showModal');
 });

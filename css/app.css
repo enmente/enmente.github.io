@@ -280,7 +280,9 @@ display: flex;
     text-align: justify;
 }
 
-.primaryButtonWrapper {}
+.primaryButtonWrapper {
+  display: flex;
+}
 
 .listTile {
     display: flex;
