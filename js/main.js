@@ -260,7 +260,7 @@ $(document).ready(function() {
                             '<div class="labeli">Duración:</div><div id="duracion" class="answer">'+(curso.tiempo.semanas)+' semanas</div>'+
                         '</div>'+
                         '<div class="primaryButtonWrapper">'+
-                            '<div id="pdf'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px; background-color: white; color:#EC1748" class="primaryButton pdf">Descargar PDF</div>'+
+                            '<a href="'+curso.pdf+'" id="pdf'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px; background-color: white; color:#EC1748" class="primaryButton pdf" download>Ver PDF</a>'+
                         '</div>'+
                         '<div style="height:30px"></div>'+
                         '<div class="primaryButtonWrapper">'+
@@ -329,20 +329,7 @@ $(document).on('click', '.inscribirme', function(event) {
     $('#nombreTaller').html(curso.nombre);
 
 });
-$(document).on('click', '.pdf', function(event) {
-    event.preventDefault();
-    var index = event.target.id.replace(/^\D+/g, '');
-    var curso = cursos[index-1];
-   var pdfURL = curso.pdf;
-    var xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-    xhr.onload = function(event) {
-    var blob = xhr.response;
-  };
-  xhr.open('GET', pdfURL);
-  xhr.send();
 
-});
 $('#modali').click(function(event) {
     $('#modali').removeClass('showModal');
 });
