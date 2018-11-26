@@ -259,16 +259,23 @@ $(document).ready(function() {
                             '<div class="labeli">Horas de sesion:</div><div id="horas" class="answer">'+(curso.tiempo.horas)+' horas</div>'+
                         '</div>'+
                         '<div class="listTile">'+
-                            '<div class="labeli">Direccion:</div><div id="duracion" class="answer">'+(curso.direccion)+'</div>'+
+                            '<div class="labeli">Direccion:</div><div id="duracion" class="answer">'+(curso.direccion)+'</div><h2 id="verMapa'+index+'" class="verMapa">Ver mapa</h2>'+
                         '</div>'+
-                        '<div class="mapouter"><div class="gmap_canvas"><iframe height="500" class="gmap_iframe" id="gmap_canvas'+index+'" src="https://maps.google.com/maps?q='+curso.direccion+'%20peru&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>'+
+                        '<div style="height:30px"></div>'+
                         '<div class="primaryButtonWrapper">'+
-                            '<a href="'+curso.pdf+'" id="pdf'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px; background-color: white; color:#EC1748;" class="primaryButton pdf" download>Ver PDF</a>'+
+                            '<div  id="pdf'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px; background-color: white; color:#EC1748;" class="primaryButton pdf" >Ver PDF</div>'+
                         '</div>'+
                         '<div style="height:30px"></div>'+
                         '<div class="primaryButtonWrapper">'+
                             '<div id="inscribirme'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px;"class="primaryButton inscribirme">Inscribirme</div>'+
                         '</div>'+
+                        '<div class="mapaFrame" id="mapaFrame'+index+'" >'+
+                           '<div class="mapouter"><div class="gmap_canvas"><iframe height="500" class="gmap_iframe" id="gmap_canvas'+index+'" src="https://maps.google.com/maps?q='+curso.direccion+'%20peru&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>'+
+                        '</div>'+
+                        '<div class="pdfFrame" id="pdfFrame'+index+'" >'+
+                            '<object class="pdfFrameframe" scrolling="yes" type="application/pdf" data="/pdf/'+curso.pdf+'.pdf#view=fitH"/></object>'+
+                        '</div>'+
+                       
                     '</div>'+
             '</div>'+
         '</div>';
@@ -276,12 +283,33 @@ $(document).ready(function() {
             });
         });
 });
+$(document).on('click', '.verMapa', function(event) {
+    event.preventDefault();
+     var index = event.target.id.replace(/^\D+/g, '');
+    $('#mapaFrame'+index).addClass('pdfShow');
+});
+
 $('#modalRegister').click(function(event) {
     event.preventDefault();
     event.stopPropagation();
 });
-
-
+$(document).on('click', '.mapaFrame', function(event) {
+    event.preventDefault();
+    var index = event.target.id.replace(/^\D+/g, '');
+    $('#mapaFrame'+index).removeClass('pdfShow');
+    /* Act on the event */
+});
+$(document).on('click', '.pdfFrame', function(event) {
+    event.preventDefault();
+    var index = event.target.id.replace(/^\D+/g, '');
+    $('#pdfFrame'+index).removeClass('pdfShow');
+    /* Act on the event */
+});
+$(document).on('click', '.pdf', function(event) {
+    event.preventDefault();
+    var index = event.target.id.replace(/^\D+/g, '');
+    $('#pdfFrame'+index).addClass('pdfShow');    
+});
 $('#before').click(function(event) {
     var actual = $("div:has(.actual)");
     var next = $("div:has(.actual)").next();

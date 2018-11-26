@@ -282,15 +282,77 @@ display: flex;
     border-radius: 10px;
     text-align: justify;
 }
-
+.pdfFrameframe{
+  height: 90vh;
+  position: absolute;
+  top: calc(50% - 45vh); 
+  left: calc(50% - 45vw);
+  width: 90vw;
+}
+.mapaFrame{
+   top: 0;
+    opacity: 0;
+    left: 0;
+    transition: opacity 1s;
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+}
+.verMapa{
+  cursor: pointer;
+    color: #EC1748;
+    font-weight: bold;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    padding-left: 20px;
+    font-size: 1em;
+}
+.cancel{
+  position: absolute;
+    height: 30px;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+.pdfFrame{
+    top: 0;
+    opacity: 0;
+    left: 0;
+    transition: opacity 1s;
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+}
+.pdfShow{
+  z-index: 9999999999999 !important;
+  opacity: 1 !important;
+}
 .primaryButtonWrapper {
   display: flex;
 }
 .gmap_iframe{
   width: 100%;
+    height: 100%;
 }
-.mapouter{text-align:right;height:500px;width:100%;}
-.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%; } 
+.mapouter{
+  text-align: right;
+    height: 90vh;
+    width: 90vw;
+    top: calc(50% - 45vh);
+    left: calc(50% - 45vw);
+    position: absolute;
+  }
+.gmap_canvas {
+  overflow: hidden;
+    background: none!important;
+    height: 100%;
+    width: 100%;
+}
 .listTile {
     display: flex;
     padding-bottom: 10px;
