@@ -270,6 +270,9 @@ display: flex;
     font-size: inherit;
     padding-right: 10px;
     padding-left: 0 !important;
+    display: flex;
+    justify-self: center;
+    align-self: center;
 }
 
 .answer {
@@ -283,7 +286,11 @@ display: flex;
 .primaryButtonWrapper {
   display: flex;
 }
-
+.gmap_iframe{
+  width: 100%;
+}
+.mapouter{text-align:right;height:500px;width:100%;}
+.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%; } 
 .listTile {
     display: flex;
     padding-bottom: 10px;

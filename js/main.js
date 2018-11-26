@@ -3,10 +3,11 @@ $('#cubitos2').addClass('down');
 $('#cubitos3').addClass('up');
 var tematicasInsc = [];
 class Curso {
-    constructor(nombre, objetivos, perfil, tematicas, tiempo, cursoDescription, photoURL, inicio, termino, precio, inscripcion, vacantes, priority,tipe,pdf) {
+    constructor(nombre, objetivos, perfil, tematicas, tiempo, cursoDescription, photoURL, inicio, termino, precio, inscripcion, vacantes, priority,tipe,pdf,direccion) {
         this.nombre = nombre;
         this.cursoDescription = cursoDescription;
         this.objetivos = objetivos;
+        this.direccion = direccion;
         this.priority = priority;
         this.tipe = tipe;
         this.photoURL = photoURL;
@@ -187,6 +188,7 @@ $(document).ready(function() {
                     curso.termino = childSnapshot.child('fechaClasesTerm').val();
                     curso.precio = childSnapshot.child('precio').val();
                     curso.vacantes = childSnapshot.child('vacantes').val();
+                    curso.direccion = childSnapshot.child('Direccion').val();
                     curso.inscripcion = childSnapshot.child('fechaInsc').val();
                     curso.tipe = childSnapshot.child('tipe').val();
                     curso.priority = childSnapshot.child('priority').val();
@@ -254,13 +256,14 @@ $(document).ready(function() {
                             '<div class="labeli">Vacantes:</div><div id="vacantes" class="answer">'+(curso.vacantes)+'</div>'+
                         '</div>'+
                         '<div class="listTile">'+
-                            '<div class="labeli">Horas semanales:</div><div id="horas" class="answer">'+(curso.tiempo.total)+' horas</div>'+
+                            '<div class="labeli">Horas de sesion:</div><div id="horas" class="answer">'+(curso.tiempo.horas)+' horas</div>'+
                         '</div>'+
                         '<div class="listTile">'+
-                            '<div class="labeli">Duración:</div><div id="duracion" class="answer">'+(curso.tiempo.semanas)+' semanas</div>'+
+                            '<div class="labeli">Direccion:</div><div id="duracion" class="answer">'+(curso.direccion)+'</div>'+
                         '</div>'+
+                        '<div class="mapouter"><div class="gmap_canvas"><iframe height="500" class="gmap_iframe" id="gmap_canvas'+index+'" src="https://maps.google.com/maps?q='+curso.direccion+'%20peru&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>'+
                         '<div class="primaryButtonWrapper">'+
-                            '<a href="'+curso.pdf+'" id="pdf'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px; background-color: white; color:#EC1748" class="primaryButton pdf" download>Ver PDF</a>'+
+                            '<a href="'+curso.pdf+'" id="pdf'+index+'" style="margin: auto;font-size: 1em;padding-left: 20px;max-width: 400px;padding-right: 20px; background-color: white; color:#EC1748;" class="primaryButton pdf" download>Ver PDF</a>'+
                         '</div>'+
                         '<div style="height:30px"></div>'+
                         '<div class="primaryButtonWrapper">'+
