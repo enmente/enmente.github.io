@@ -359,6 +359,7 @@ $(document).on('click', '.inscribirme', function(event) {
     $('#modali').addClass('showModal');
     $('#nombreTaller').html(curso.nombre);
 
+
 });
 
 $('#modali').click(function(event) {
@@ -383,7 +384,7 @@ $('#terminar').click(function(event) {
                     "Correo": $('#correo').val(),
                     "Region": region,
                     "Contacto": $('#contacto').val(),
-                    "Curso": $('#nombreTaller').val(),
+                    "Curso": $('#nombreTaller').html(),
             });
             tematicasInsc.forEach(element => {
                 unique.child('Tematicas').push().set(element);
@@ -391,7 +392,7 @@ $('#terminar').click(function(event) {
        var template_params = {
            "reply_to": "noreply@enmente.pe",
            "inscriptor_name":$('#nombres').val(),
-           "inscriptor_curso": $('#nombreTaller').val(),
+           "inscriptor_curso": $('#nombreTaller').html(),
            "inscriptor_correo":  $('#correo').val(),
            "inscriptor_contacto": $('#contacto').val()
         }
